@@ -454,19 +454,18 @@
 
     function escapePlan() {
         const piece = createPiece();
-        piece.amIFree()
+
         let switcher = false;
         while (true) {
             piece.goForward();
-            console.log(piece.amIFree());
-             if (!piece.isThereWay()) {
-                 if (!switcher) piece.turnRight();
-                 if (switcher) piece.turnLeft();
-                 if (!piece.isThereWay()) {
-                     piece.turnLeft();
-                     switcher = !switcher;
-                 }
-             }
+            if (!piece.isThereWay()) {
+                if (!switcher) piece.turnRight();
+                if (switcher) piece.turnLeft();
+                if (!piece.isThereWay()) {
+                    piece.turnLeft();
+                    switcher = !switcher;
+                }
+            }
             if (position['left'] === 0 && position['top'] === 9) break;
         }
     }
