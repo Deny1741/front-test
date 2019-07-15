@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress ALL -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -260,6 +261,7 @@
     const pieceElement = document.querySelector('.piece');
     const directionNames = ['up', 'right', 'down', 'left'];
     let stepper;
+    let position;
 
     class Field {
         constructor() {
@@ -359,7 +361,7 @@
         let stepsCount = 0;
         let turnsCount = 0;
         let moves = [];
-        let position = {
+        position = {
             left: Math.floor(Math.random() * 10),
             top: Math.floor(Math.random() * 10)
         };
@@ -406,7 +408,6 @@
                     default:
                         return false
                 }
-
                 movePiece(position);
             },
             amIFree() {
@@ -418,8 +419,9 @@
 
             let nextMove = moves.pop();
 
+
             if (typeof nextMove === 'function') {
-                nextMove();
+                    nextMove();
             } else {
                 let success = isPieceOut();
 
@@ -452,11 +454,21 @@
 
     function escapePlan() {
         const piece = createPiece();
-        // piece.isThereWay();
-        // piece.goForward();
-        // piece.turnRight();
-        // piece.turnLeft();
-        // piece.amIFree();
+        piece.amIFree()
+        let switcher = false;
+        while (true) {
+            piece.goForward();
+            console.log(piece.amIFree());
+             if (!piece.isThereWay()) {
+                 if (!switcher) piece.turnRight();
+                 if (switcher) piece.turnLeft();
+                 if (!piece.isThereWay()) {
+                     piece.turnLeft();
+                     switcher = !switcher;
+                 }
+             }
+            if (position['left'] === 0 && position['top'] === 9) break;
+        }
     }
 
     function main() {

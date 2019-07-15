@@ -1,0 +1,134 @@
+
+.article-background {
+    background: whitesmoke;
+}
+
+.article {
+    background: whitesmoke;
+    margin: 0 auto;
+    max-width: 984px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+//  justify-content: space-between;
+    align-items: center;
+    position: relative;
+//   margin: 6px;
+}
+
+.article-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.article-title {
+    font-size: 36px;
+    font-weight: normal;
+    color: #383838;
+}
+
+.search-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.article input {
+    padding: 0 25px;
+    height: 100%;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: right;
+    margin-left: auto;
+
+}
+
+.icon-search {
+    position: absolute;
+}
+
+.article-item {
+    background: white;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.article-item img {
+    height: 80px;
+    width: 80px;
+    margin-right: 10px;
+}
+
+.article-item label {
+    color: #383838;
+    font-size: 24px;
+}
+
+.article-link {
+    font-weight: bold;
+    color: #009DF2;
+    border: 1px solid #009DF2;
+    width: fit-content;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.article-item-text {
+    color: #383838;
+    font-size: 18px;
+}
+
+.text-margin {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.article-item-title {
+    color: #757575;
+    margin-top: 20px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.article-item h4 {
+    text-align: right;
+    font-weight: normal;
+    color: #383838;
+    font-size: 24px;
+    margin-top: auto;
+}
+
+.subtitle {
+    text-align: right;
+    font-size: 12px;
+}
+
+.article-item-button {
+    text-align: center;
+    color: white;
+    background: #FFA500;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 6px;
+    margin: 6px;
+    border-radius: 6px;
+}
+
+.none {
+    display: none;
+}
